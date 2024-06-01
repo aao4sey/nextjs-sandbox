@@ -110,7 +110,7 @@ const RecipeForm = () => {
                   <RadioGroup
                     onValueChange={field.onChange}
                     defaultValue={field.value}
-                    className="flex flex-row space-x-3"
+                    className="flex flex-row space-x-3 px-2"
                   >
                     {Object.values(RecipeType).map((type) => {
                       return (
@@ -130,11 +130,18 @@ const RecipeForm = () => {
               </FormItem>)
             }}
           />
-          <FormLabel className='font-bold'>材料</FormLabel>
-          <ul>
+          <div className='flex flex-row justify-between mb-2'>
+            <div className='align-middle'>
+              <FormLabel className='font-bold block'>材料</FormLabel>
+            </div>
+            <div>
+              <Button onClick={handleOnClick}>追加</Button>
+            </div>
+          </div>
+          <ul className=''>
             {fields.map((item, index) => (
-              <li key={item.id}>
-                <div className="flex w-full max-w-sm items-center space-x-2">
+              <li key={item.id} className='mb-2'>
+                <div className="flex w-full items-center space-x-2">
                   <FormField
                     render={({ field }) => <Input {...field} placeholder='材料名' />}
                     name={`ingradient.${index}.name`}
@@ -150,8 +157,8 @@ const RecipeForm = () => {
               </li>
             ))}
           </ul>
-          <Button onClick={handleOnClick}>追加</Button>
-          <Button type='submit'>送信</Button>
+
+          <Button type='submit' className='w-full'>送信</Button>
         </form>
       </Form>
     </div >
