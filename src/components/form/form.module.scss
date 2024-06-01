@@ -1,0 +1,20 @@
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin:0 auto;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.formItemWrapper{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    padding: 24px 0;
+}
+
+.formErrorMessage{
+    text-align: left;
+    color: red;
+}
